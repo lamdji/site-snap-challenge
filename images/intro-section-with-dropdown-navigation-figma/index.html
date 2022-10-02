@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <title>Frontend Mentor | Intro section with dropdown navigation</title>
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<header>
+  <img class="logo" src="images/logo.svg" alt="logo">
+  <nav class="navToggle">
+    <div class="navLeft">
+      <ul>
+        <li><a class="moreLink">Features</a></li>
+        <li><a class="moreLink">Company</a></li>
+        <li><a>Careers</a></li>
+        <li><a>About</a></li>
+      </ul>
+
+        <ul style="display:none;">
+          <li id="todo" class="todo"><img src="images/icon-todo.svg" alt="icon_todo"><a href="#">Todo List</a></li>
+          <li id="calendar" class="calendar"><img src="images/icon-calendar.svg" alt="icon_calandar"><a href="#">Calendar</a></li>
+          <li id="reminders" class="reminders"><img src="images/icon-reminders.svg" alt="icon_reminders"><a href="#">Reminders</a></li>
+          <li id="planning" class="planning"><img src="images/icon-planning.svg" alt="icon_planning"><a href="#"> Planning</a></li>
+        </ul>
+        <ul style="display:none;">
+          <li id="history" class="history"><a href="#">History</a></li>
+          <li id="team" class="team"><a href="#">Our team</a></li>
+          <li id="blog" class="blog"><a href="#">Blog</a></li>
+        </ul>
+
+    </div>
+
+    <div class="navRight">
+      <ul>
+        <li><a href="">Login</a></li>
+        <li><a href="">Register</a></li>
+      </ul>
+    </div>
+
+  </nav>
+
+</header>
+
+<body>
+  <div class="mainPart">
+    <div class="block_text">
+      <h1 class="bigText"><span style="display: block;">Make</span> remote work</h1>
+      <p class="mainText">  Get your team in sync, no matter your location. Streamline processes, 
+      create team rituals, and watch productivity soar.
+      </p>
+
+      <br>
+      <button class="buttonLearn">
+        <a href="#">Learn more</a>
+      </button>
+      <div class="imagesFooter">
+        <img src="images/client-databiz.svg" alt="databiz">
+        <img src="images/client-audiophile.svg" alt="audiophile">
+        <img src="images/client-meet.svg" alt="meet">
+        <img src="images/client-maker.svg" alt="maker">
+      </div>
+    </div>
+    <div style="width: 50%; text-align: center;">
+      <img class="hero" src="images/image-hero-desktop.png" alt="hero">
+    </div> 
+    
+  </div>
+</body>
+
+  <footer>
+    
+    <div class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      Coded by <a href="#">Lamine Djitté</a>.
+    </div>
+  </footer>
+</html>
