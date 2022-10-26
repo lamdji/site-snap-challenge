@@ -28,6 +28,10 @@ h1 {
 .attribution { font-size: 11px; text-align: center; margin-top: 20px;}
 .attribution a { color: hsl(228, 45%, 44%); }
 
+.navToggleMobile{
+  display: none;
+}
+
 .navLeft ul, .navRight ul {
   display: flex;
   margin: 34px;
@@ -139,7 +143,7 @@ padding-top: 100px;
   text-align: center;
   border-radius: 10px;
   line-height: 28px;
-  padding: 10px 15px;
+  padding: 14px 28px;;
 }
 
 
@@ -152,14 +156,95 @@ padding-top: 100px;
 .hero
 {
   width: 480px;
-  height:640px
+  height:640px;
 }
+.heroMobile
+{
+  display:none;
+  width: 100%
+}
+
+@media only screen and (max-width :800px) {
+  header
+{
+  margin: unset;
+  padding: unset;
+}
+  body{
+    width: 100%;
+  }
+  
+  .logo{
+    display: none;
+  }
+  .navToggleMobile{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 25px 15px 15px;
+  }
+  .mainPart {
+    display: flex;
+    visibility: visible;
+    flex-direction: column-reverse;
+    justify-content: space-between;
+    text-align: center;
+    align-items: center;
+    margin: unset;
+  }
+  .bigText{
+    margin: unset;
+    display: block;
+    text-align: center;
+  }
+  .mainText{
+    margin: unset;
+    display: block;
+    padding: 16px 16px 24px 16px;
+    width: 100%;
+    font-size: 16px;
+  }
+  .hero {
+    display: none;
+  }
+  .heroMobile {
+    display: block;
+  }
+  .navToggle {
+    display: none;
+  }
+   h1{
+    padding: 0;
+    text-align: center;
+    font-size: 38px;
+    margin-top: 16px;
+}
+.title span{
+    display:inline-block;
+}
+.mainTitle p{
+    padding: 0 7% 0 7%;
+    margin: -40px auto 0;
+}
+
+.heroImage{
+    width: 100%;
+}
+body{
+    width: auto;
+}
+}
+
 
 .imagesFooter
 {
-  margin-top: 78px;
+  margin-top: 48px;
+  display: flex;
+  justify-content: space-around;
+  height: 24px;
 }
 .imagesFooter img
 {
-  padding-right: 25px;
+  padding-right: unset;
 }
+
