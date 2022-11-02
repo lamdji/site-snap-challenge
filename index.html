@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="script/js" type="module"></script>
   <title>lamzo Intro section with dropdown navigation</title>
 
   <link rel="icon" type="image/png" sizes="32x32" href=".images/favicon-32x32.png">
@@ -12,7 +13,7 @@
   <a class="logo" href="#"><img src="images/logo.svg" alt="logo"></a>
   <nav class="navToggleMobile">
     <a class="logoMobile" href="#"><img src="images/logo.svg" alt="logo"></a>
-    <a class="iconMenu" href="#"><img src="images/icon-menu.svg" alt="menu"></a>
+    <button class="iconMenu" href="navLeft"><img src="images/icon-menu.svg" alt="menu"></button>
 
   </nav>
   <nav class="navToggle">
@@ -47,7 +48,9 @@
     <div class="navRight">
       <ul>
         <li><a href="#">Login</a></li>
-        <li><button class="button"><a class="register" href="#">Register</a></button></li>
+        <li><button class="buttonRegister">
+          <a href="#">Register</a>
+        </button></li>
       </ul>
     </div>
 
