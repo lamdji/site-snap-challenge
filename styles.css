@@ -46,7 +46,6 @@ li:hover{
 
 .navLeft ul {
   display: flex;
-  align-items: center;
   column-gap: 40px;
 }
 .navLeft li{
@@ -193,7 +192,7 @@ padding-top: 100px;
   width: 100%
 }
 
-@media only screen and (max-width :1000px) {
+@media only screen and (max-width :800px) {
   header
 {
   margin: unset;
@@ -313,7 +312,6 @@ margin-bottom: 16px;
 a{
   font-size: 16px;
 }
-  }
   .mainPart {
     display: flex;
     visibility: visible;
@@ -362,7 +360,7 @@ a{
 body{
     width: auto;
 }
-
+}
 
 
 .imagesFooter
