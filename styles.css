@@ -17,6 +17,7 @@
 
 body {
   height: 100%;
+   font: 500 16px/1.5 Epilogue, sans-serif;
 }
 
 h1 {
@@ -45,36 +46,57 @@ li:hover{
 
 .navLeft ul {
   display: flex;
-  margin-left: 64px;
   align-items: center;
+  column-gap: 40px;
+}
+.navLeft li{
+  margin-right: 14px;
 }
 
+.sousMenuLines{
+  display: flex;
+  column-gap: 15px;
+  margin-bottom: 14px;
+}
+
+.sousMenuIcons{
+  padding: 4px;
+}
 .navRight ul{
   display: flex;
   align-items: center;
+  column-gap: 40px;
 }
 
-nav li {
+.navRight li {
   margin-right: 35px;
 }
 
+.moreLink li{
+  position:absolute;
+  display: flex;
+  justify-content: space-between;
+}
+
 .moreLink {
-  position: relative;
+  margin-right: 9px;
 }
 
-.moreLink:after {
-  content:'';
+.sousMenu{
+  display: grid;
   position: absolute;
-  display: block;
-  height: 6px;
-  width: 10px;
-  color: black;
-  background-image: url("./images/icon-arrow-down.svg");
-  background-repeat: no-repeat;
-  right: -12px;
-  top:5px;
+  background: #fff;
+  padding: 24px;
+  box-shadow: 0 5px 25px rgba(0, 0,0, 10%);
+  border-radius: 8px;
+  margin-top: 10px;
 }
 
+.sousMenuItems{
+display: flex;
+margin-bottom: 8px;
+
+}
 header
 {
   display: flex;
@@ -86,6 +108,7 @@ header
   display: flex;
   width: 100%;
   justify-content: space-between;
+  margin-left: 64px;
 }
 
 
@@ -126,7 +149,7 @@ button {
 }
 .mainPart
 {
-  margin: 10px 130px 0 165px;
+  margin: 48px 130px 0 165px;
   display: flex;
 justify-content: space-between;
 }
@@ -170,11 +193,16 @@ padding-top: 100px;
   width: 100%
 }
 
-@media only screen and (max-width :800px) {
+@media only screen and (max-width :1000px) {
   header
 {
   margin: unset;
   padding: unset;
+}
+.navToggle{
+  margin: unset;
+  padding: unset;
+  display: none;
 }
   body{
     width: 100%;
@@ -190,13 +218,101 @@ padding-top: 100px;
     padding: 25px 15px 15px;
   }
 
+  #checkbox{
+    display: none;
+}
+
+.hamburger {
+    position:relative;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 0 36px 12px 5px;
+}
+
+.line{
+    position: absolute;
+    width: 32px;
+    height: 3px;
+    background-color: black;
+    border-radius: 3px;
+    transition: transform .25s, opacity .35s;
+}
+
+.lineTop{
+    transform: translateY(-9px);
+}
+
+.lineBottom{
+    transform: translateY(9px);
+}
+
+#checkbox:checked~.lineTop{
+    transform: rotate(45deg);
+}
+
+#checkbox:checked~.lineMiddle{
+    transform: translateX(16px);
+    color: #fff;
+    opacity: 0;
+}
+
+#checkbox:checked~.lineBottom{
+    transform: rotate(-45deg);
+}
+
+#checkbox:checked~.lineMiddle{
+transition: transform .25s, opacity .35s;
+}
+
+  .navToggle{
+    margin-top: 50px;
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+    width: 64%;
+    height:128%;
+    right: 0;
+    background-color: #fff;
+    justify-content: unset;
+  }
+
+  .navLeft ul{
+    display: unset;
+    margin-top: 34px;
+    margin-left: 20px;
+  }
+  .navLeft li{
+margin-bottom: 16px;
+
+  }
+
   .navLeft{
-    width: 36vw;
-    height:100vh;
+    margin-bottom: 16px;
+  }
+
+  .navRight ul{
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  }
+.navRight li:last-child{
+  width: 95%;
+}
+  .navRight li{
+    margin:unset;
+margin-bottom: 16px;
+}
+
+.buttonRegister{
+  display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+    padding-top: 12px;
+}
+a{
+  font-size: 16px;
+}
   }
   .mainPart {
     display: flex;
@@ -225,9 +341,7 @@ padding-top: 100px;
   .heroMobile {
     display: block;
   }
-  .navToggle {
-    display: none;
-  }
+
    h1{
     padding: 0;
     text-align: center;
@@ -248,7 +362,7 @@ padding-top: 100px;
 body{
     width: auto;
 }
-}
+
 
 
 .imagesFooter

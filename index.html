@@ -13,28 +13,32 @@
   <a class="logo" href="#"><img src="images/logo.svg" alt="logo"></a>
   <nav class="navToggleMobile">
     <a class="logoMobile" href="#"><img src="images/logo.svg" alt="logo"></a>
-    <button class="iconMenu" href="navLeft"><img src="images/icon-menu.svg" alt="menu"></button>
-
+    <label for="checkbox" class="hamburger">
+      <input type="checkbox" id="checkbox">
+      <span class="line lineTop"></span>
+      <span class="line lineMiddle"></span>
+      <span class="line lineBottom"></span>
+  </label>
   </nav>
   <nav class="navToggle">
     <div class="navLeft">
 
       <ul>
-        <li><a class="moreLink" href="#">Features</a>
+        <li><a class="moreLink" href="#">Features</a><span class="arrow"><img src="images/icon-arrow-down.svg"></span>
         
-          <ul style="display:none;">
-            <li id="todo" class="todo"><img src="images/icon-todo.svg" alt="icon_todo"><a href="#">Todo List</a></li>
-            <li id="calendar" class="calendar"><img src="images/icon-calendar.svg" alt="icon_calandar"><a href="#">Calendar</a></li>
-            <li id="reminders" class="reminders"><img src="images/icon-reminders.svg" alt="icon_reminders"><a href="#">Reminders</a></li>
-            <li id="planning" class="planning"><img src="images/icon-planning.svg" alt="icon_planning"><a href="#"> Planning</a></li>
+          <ul id="sousMenu" class="sousMenu" style="display:none;">
+            <li id="sousMenuLines" class="sousMenuLines"><img class="sousMenuIcons" src="images/icon-todo.svg" alt="icon_todo"><a href="#">Todo List</a></li>
+            <li id="sousMenuLines" class="sousMenuLines"><img class="sousMenuIcons" src="images/icon-calendar.svg" alt="icon_calandar"><a href="#">Calendar</a></li>
+            <li id="sousMenuLines" class="sousMenuLines"><img class="sousMenuIcons" src="images/icon-reminders.svg" alt="icon_reminders"><a href="#">Reminders</a></li>
+            <li id="sousMenuLines" class="sousMenuLines"><img class="sousMenuIcons" src="images/icon-planning.svg" alt="icon_planning"><a href="#"> Planning</a></li>
           </ul>
         </li>
 
-        <li><a class="moreLink" href="#">Company</a>
-          <ul style="display:none;">
-            <li id="history" class="history"><a href="#">History</a></li>
-            <li id="team" class="team"><a href="#">Our team</a></li>
-            <li id="blog" class="blog"><a href="#">Blog</a></li>
+        <li><a class="moreLink" href="#">Company</a><span class="arrow"><img src="images/icon-arrow-down.svg"></span>
+          <ul id="sousMenu"class="sousMenu"  style="display:none;">
+            <li id="sousMenuLines" class="sousMenuLines"><a href="#">History</a></li>
+            <li id="sousMenuLines" class="sousMenuLines"><a href="#">Our Team</a></li>
+            <li id="sousMenuLines" class="sousMenuItems"><a href="#">Blog</a></li>
           </ul></li>
         <li><a href="#">Careers</a></li>
         <li><a href="#">About</a></li>
