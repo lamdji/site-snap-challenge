@@ -40,14 +40,21 @@ nav{
 li:hover{
   color: black;
 }
+
+
 .navLeft{
   display: flex;
   margin-top: 6px;
 }
 
+.arrowUp{
+  transform: rotate(-180deg);
+  transition: transform 400ms ease;
+}
 .navLeft ul {
-  display: flex;
   column-gap: 40px;
+  display: flex;
+
 }
 .navLeft li{
   margin-right: 14px;
@@ -82,15 +89,8 @@ li:hover{
   margin-right: 9px;
 }
 
-.sousMenu{
-  display: grid;
-  position: absolute;
-  background: #fff;
-  padding: 24px;
-  box-shadow: 0 5px 25px rgba(0, 0,0, 10%);
-  border-radius: 8px;
-  margin-top: 10px;
-}
+
+
 
 .sousMenuItems{
 display: flex;
@@ -147,6 +147,19 @@ button {
   background-color: black;
   color: white;
 }
+.sousMenu{
+  position: absolute;
+  background: #fff;
+  padding: 24px;
+  box-shadow: 0 5px 25px rgba(0, 0,0, 10%);
+  border-radius: 8px;
+  margin-top: 10px;
+overflow: hidden;
+  animation: fade-in 400ms ease forwards;
+}
+.sousMenu ul{
+    display: block;}
+
 .mainPart
 {
   margin: 48px 130px 0 165px;
@@ -271,7 +284,7 @@ transition: transform .25s, opacity .35s;
     display: flex;
     position: absolute;
     flex-direction: column;
-    width: 64%;
+    width: 45%;
     height:128%;
     right: 0;
     background-color: #fff;
@@ -292,6 +305,19 @@ margin-bottom: 16px;
     margin-bottom: 16px;
   }
 
+  .sousMenu{
+    display: block;
+    position: relative;
+    overflow: hidden;
+    margin: unset;
+    padding: unset;
+    box-shadow: unset;
+    margin-top: 16px;
+  }
+  .show{
+overflow: visible;
+animation: fade-in 400ms ease forwards;
+  }
   .navRight ul{
     display: flex;
     flex-direction: column;

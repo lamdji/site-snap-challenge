@@ -3,7 +3,6 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="script/js" type="module"></script>
   <title>lamzo Intro section with dropdown navigation</title>
 
   <link rel="icon" type="image/png" sizes="32x32" href=".images/favicon-32x32.png">
@@ -24,9 +23,9 @@
     <div class="navLeft">
 
       <ul>
-        <li><a class="moreLink" href="#">Features</a><span class="arrow"><img src="images/icon-arrow-down.svg"></span>
+        <li><a class="moreLink" id="MoreLink" href="#">Features</a><span ><img id="arrow" class="arrow" src="images/icon-arrow-down.svg"></span>
         
-          <ul id="sousMenu" class="sousMenu" style="display:none;">
+          <ul id="sousMenu" style="display:block;visibility: hidden;"class="sousMenu">
             <li id="sousMenuLines" class="sousMenuLines"><img class="sousMenuIcons" src="images/icon-todo.svg" alt="icon_todo"><a href="#">Todo List</a></li>
             <li id="sousMenuLines" class="sousMenuLines"><img class="sousMenuIcons" src="images/icon-calendar.svg" alt="icon_calandar"><a href="#">Calendar</a></li>
             <li id="sousMenuLines" class="sousMenuLines"><img class="sousMenuIcons" src="images/icon-reminders.svg" alt="icon_reminders"><a href="#">Reminders</a></li>
@@ -34,8 +33,8 @@
           </ul>
         </li>
 
-        <li><a class="moreLink" href="#">Company</a><span class="arrow"><img src="images/icon-arrow-down.svg"></span>
-          <ul id="sousMenu"class="sousMenu"  style="display:none;">
+        <li><a class="moreLink" id="MoreLink" href="#">Company</a><span ><img id="arrow" class="arrow" src="images/icon-arrow-down.svg"></span>
+          <ul id="sousMenu"class="sousMenu"  style="display:block;visibility: hidden;">
             <li id="sousMenuLines" class="sousMenuLines"><a href="#">History</a></li>
             <li id="sousMenuLines" class="sousMenuLines"><a href="#">Our Team</a></li>
             <li id="sousMenuLines" class="sousMenuItems"><a href="#">Blog</a></li>
@@ -94,4 +93,5 @@
       Coded by <a href="#">Lamine Djitté</a>.
     </div>
   </footer>
+  <script src="script.js"></script>
 </html>
