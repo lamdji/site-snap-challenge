@@ -15,8 +15,12 @@
   color: unset;
 }
 
+.opacity{
+  display: none;
+}
 body {
   height: 100%;
+   font: 500 16px/1.5 Epilogue, sans-serif;
 }
 
 h1 {
@@ -36,45 +40,102 @@ nav{
   color: grey;
 }
 
-li:hover{
+
+a:hover{
   color: black;
 }
 .navLeft{
-  display: flex;
+  margin-top: 6px;
 }
 
-.navLeft ul {
-  display: flex;
-  margin-left: 64px;
-  align-items: center;
+ul{
+  display: inline-flex;
+    column-gap: 40px;
 }
 
+
+.btn{
+  display: inline-flex;
+    column-gap: 40px;
+    font: 500 16px/1.5 Epilogue, sans-serif;
+    color:grey;
+    padding-right: 5px;
+}
+
+.btn:hover{
+  color: black;
+}
+
+.arrow{
+  transform: rotate(180deg);
+  transition: transform 400ms ease;
+}
+
+.arrowUp{
+  transform: rotate(-180deg);
+  transition: transform 400ms ease;
+}
+
+.sousMenuContent {
+  position: absolute;
+  display: block;
+  transition: 0.5s;
+  animation: fade-in 400ms ease forwards;
+  visibility: hidden;
+  opacity: 0;
+  background: #fff;
+  padding: 24px;
+  box-shadow: 0 5px 25px rgba(0, 0,0, 10%);
+  border-radius: 8px;
+  margin-top: 40px;
+}
+
+.show {
+  display: block;
+  transition: 0.5s;
+  animation: fade-in 400ms ease forwards;
+  visibility: visible;
+  opacity: 1;
+}
+.navLeft li{
+  margin-right: 14px;
+}
+
+
+.sousMenuLines{
+  display: flex;
+  column-gap: 15px;
+  margin-bottom: 14px;
+}
+
+.sousMenuIcons{
+  padding: 4px;
+}
 .navRight ul{
   display: flex;
   align-items: center;
+  column-gap: 40px;
 }
 
-nav li {
+.navRight li {
   margin-right: 35px;
 }
 
+.moreLink li{
+  position:absolute;
+  display: flex;
+  justify-content: space-between;
+}
+
 .moreLink {
-  position: relative;
+  margin-right: 9px;
 }
 
-.moreLink:after {
-  content:'';
-  position: absolute;
-  display: block;
-  height: 6px;
-  width: 10px;
-  color: black;
-  background-image: url("./images/icon-arrow-down.svg");
-  background-repeat: no-repeat;
-  right: -12px;
-  top:5px;
-}
+.sousMenuItems{
+display: flex;
+margin-bottom: 8px;
 
+}
 header
 {
   display: flex;
@@ -86,10 +147,8 @@ header
   display: flex;
   width: 100%;
   justify-content: space-between;
+  margin-left: 64px;
 }
-
-
-
 
 .mainText {
 
@@ -124,9 +183,10 @@ button {
   background-color: black;
   color: white;
 }
+
 .mainPart
 {
-  margin: 10px 130px 0 165px;
+  margin: 48px 130px 0 165px;
   display: flex;
 justify-content: space-between;
 }
@@ -134,9 +194,8 @@ justify-content: space-between;
 .blockText 
 {
 font-size: 80px;
-padding-top: 100px;
+padding-top: 48px;
 }
-
 
 .buttonLearn
 {
@@ -144,7 +203,6 @@ padding-top: 100px;
   border-color: black;
   background-color: black;
   color:white;
-
   font-size: 18px;
   font-weight: 700;
   border-radius: 10px;
@@ -176,6 +234,11 @@ padding-top: 100px;
   margin: unset;
   padding: unset;
 }
+.navToggle{
+  margin: unset;
+  padding: unset;
+  display: none;
+}
   body{
     width: 100%;
   }
@@ -190,14 +253,143 @@ padding-top: 100px;
     padding: 25px 15px 15px;
   }
 
+.hamburger {
+    display: block;
+    position:relative;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 0 36px 12px 5px;
+    z-index: 1003;
+}
+
+.hamburger span{
+
+    position: absolute;
+    width: 32px;
+    height: 3px;
+    background-color: black;
+    border-radius: 3px;
+    pointer-events: none;
+    transition: transform .3s opacity .15s ease-out;
+    align-items: center;
+}
+
+
+.hamburger span:nth-child(1),.hamburger span:nth-child(3){
+  transition:transform .3s ease-out;
+}
+.hamburger span:nth-child(1){
+  transform: translateY(-9px);
+}
+
+.hamburger span:nth-child(3){
+  transform: translateY(9px);
+}
+
+.hamburger.open span:nth-child(1){
+  transform: translateY(0) rotate(135deg);
+}
+
+.hamburger.open span:nth-child(2){
+opacity: 0;
+transform: translateX(3px);
+transition: opacity 0.2s ease-out;
+}
+.hamburger.open span:nth-child(3){
+  transform: translateY(0) rotate(-135deg);
+}
+
+  .navToggle{
+    display: block;
+    position: absolute;
+    flex-direction: column;
+    width: 40%;
+    height:136%;
+    right: 0;
+    background-color: #fff;
+    justify-content: unset;
+    padding: 0 20px 0 20px;
+    transform: translate(100%);
+    transition: transform .3s ease-in-out;
+  }
+
+  .opacity{
+    display: block;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1001;
+    background-color: #000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.15s linear, visibility 0.15s linear;
+}
+
+.opacity.show{
+  display: block;
+  visibility: visible;
+  opacity: 0.5;
+}
+
+  .navToggle.show{
+    display: block;
+    transform: translateX(0);
+    z-index: 1002;
+  }
+
+
+  .sousMenuContent.show{
+    position: unset;
+    box-shadow: unset;
+    margin-top: unset;
+  }
+  .navLeft li{
+margin-bottom: 16px;
+
+  }
+  .navLeft ul{
+    display: block;
+  }
+
   .navLeft{
-    width: 36vw;
-    height:100vh;
+    margin-top: 90px;
+    margin-bottom: 16px;
+  }
+
+  .show{
+    display: none;
+overflow: visible;
+transition: 0.5s;
+animation: height 400ms ease-in-out;
+
+  }
+  .navRight ul{
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
   }
+.navRight li:last-child{
+  width: 95%;
+}
+  .navRight li{
+    margin:unset;
+margin-bottom: 16px;
+}
+
+.buttonRegister{
+  display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+    padding-top: 12px;
+}
+a{
+  font-size: 16px;
+}
   .mainPart {
     display: flex;
     visibility: visible;
@@ -225,9 +417,7 @@ padding-top: 100px;
   .heroMobile {
     display: block;
   }
-  .navToggle {
-    display: none;
-  }
+
    h1{
     padding: 0;
     text-align: center;
@@ -248,12 +438,11 @@ padding-top: 100px;
 body{
     width: auto;
 }
-}
 
 
 .imagesFooter
 {
-  margin-top: 48px;
+  margin-top: 24px;
   display: flex;
   justify-content: space-around;
   height: 24px;
@@ -263,3 +452,4 @@ body{
   padding-right: unset;
 }
 
+}
