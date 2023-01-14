@@ -15,6 +15,9 @@
   color: unset;
 }
 
+.opacity{
+  display: none;
+}
 body {
   height: 100%;
    font: 500 16px/1.5 Epilogue, sans-serif;
@@ -37,28 +40,67 @@ nav{
   color: grey;
 }
 
-li:hover{
+
+a:hover{
   color: black;
+}
+.navLeft{
+  margin-top: 6px;
+}
+
+ul{
+  display: inline-flex;
+    column-gap: 40px;
 }
 
 
-.navLeft{
-  display: flex;
-  margin-top: 6px;
+.btn{
+  display: inline-flex;
+    column-gap: 40px;
+    font: 500 16px/1.5 Epilogue, sans-serif;
+    color:grey;
+    padding-right: 5px;
+}
+
+.btn:hover{
+  color: black;
+}
+
+.arrow{
+  transform: rotate(180deg);
+  transition: transform 400ms ease;
 }
 
 .arrowUp{
   transform: rotate(-180deg);
   transition: transform 400ms ease;
 }
-.navLeft ul {
-  column-gap: 40px;
-  display: flex;
 
+.sousMenuContent {
+  position: absolute;
+  display: block;
+  transition: 0.5s;
+  animation: fade-in 400ms ease forwards;
+  visibility: hidden;
+  opacity: 0;
+  background: #fff;
+  padding: 24px;
+  box-shadow: 0 5px 25px rgba(0, 0,0, 10%);
+  border-radius: 8px;
+  margin-top: 40px;
+}
+
+.show {
+  display: block;
+  transition: 0.5s;
+  animation: fade-in 400ms ease forwards;
+  visibility: visible;
+  opacity: 1;
 }
 .navLeft li{
   margin-right: 14px;
 }
+
 
 .sousMenuLines{
   display: flex;
@@ -89,9 +131,6 @@ li:hover{
   margin-right: 9px;
 }
 
-
-
-
 .sousMenuItems{
 display: flex;
 margin-bottom: 8px;
@@ -110,9 +149,6 @@ header
   justify-content: space-between;
   margin-left: 64px;
 }
-
-
-
 
 .mainText {
 
@@ -147,18 +183,6 @@ button {
   background-color: black;
   color: white;
 }
-.sousMenu{
-  position: absolute;
-  background: #fff;
-  padding: 24px;
-  box-shadow: 0 5px 25px rgba(0, 0,0, 10%);
-  border-radius: 8px;
-  margin-top: 10px;
-overflow: hidden;
-  animation: fade-in 400ms ease forwards;
-}
-.sousMenu ul{
-    display: block;}
 
 .mainPart
 {
@@ -170,9 +194,8 @@ justify-content: space-between;
 .blockText 
 {
 font-size: 80px;
-padding-top: 100px;
+padding-top: 48px;
 }
-
 
 .buttonLearn
 {
@@ -180,7 +203,6 @@ padding-top: 100px;
   border-color: black;
   background-color: black;
   color:white;
-
   font-size: 18px;
   font-weight: 700;
   border-radius: 10px;
@@ -231,92 +253,121 @@ padding-top: 100px;
     padding: 25px 15px 15px;
   }
 
-  #checkbox{
-    display: none;
-}
-
 .hamburger {
+    display: block;
     position:relative;
     padding: 20px;
     display: flex;
     align-items: center;
     cursor: pointer;
     padding: 0 36px 12px 5px;
+    z-index: 1003;
 }
 
-.line{
+.hamburger span{
+
     position: absolute;
     width: 32px;
     height: 3px;
     background-color: black;
     border-radius: 3px;
-    transition: transform .25s, opacity .35s;
+    pointer-events: none;
+    transition: transform .3s opacity .15s ease-out;
+    align-items: center;
 }
 
-.lineTop{
-    transform: translateY(-9px);
+
+.hamburger span:nth-child(1),.hamburger span:nth-child(3){
+  transition:transform .3s ease-out;
+}
+.hamburger span:nth-child(1){
+  transform: translateY(-9px);
 }
 
-.lineBottom{
-    transform: translateY(9px);
+.hamburger span:nth-child(3){
+  transform: translateY(9px);
 }
 
-#checkbox:checked~.lineTop{
-    transform: rotate(45deg);
+.hamburger.open span:nth-child(1){
+  transform: translateY(0) rotate(135deg);
 }
 
-#checkbox:checked~.lineMiddle{
-    transform: translateX(16px);
-    color: #fff;
-    opacity: 0;
+.hamburger.open span:nth-child(2){
+opacity: 0;
+transform: translateX(3px);
+transition: opacity 0.2s ease-out;
 }
-
-#checkbox:checked~.lineBottom{
-    transform: rotate(-45deg);
-}
-
-#checkbox:checked~.lineMiddle{
-transition: transform .25s, opacity .35s;
+.hamburger.open span:nth-child(3){
+  transform: translateY(0) rotate(-135deg);
 }
 
   .navToggle{
-    margin-top: 50px;
-    display: flex;
+    display: block;
     position: absolute;
     flex-direction: column;
-    width: 45%;
-    height:128%;
+    width: 40%;
+    height:136%;
     right: 0;
     background-color: #fff;
     justify-content: unset;
+    padding: 0 20px 0 20px;
+    transform: translate(100%);
+    transition: transform .3s ease-in-out;
   }
 
-  .navLeft ul{
-    display: unset;
-    margin-top: 34px;
-    margin-left: 20px;
+  .opacity{
+    display: block;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1001;
+    background-color: #000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.15s linear, visibility 0.15s linear;
+}
+
+.opacity.show{
+  display: block;
+  visibility: visible;
+  opacity: 0.5;
+}
+
+  .navToggle.show{
+    display: block;
+    transform: translateX(0);
+    z-index: 1002;
+  }
+
+
+  .sousMenuContent.show{
+    position: unset;
+    box-shadow: unset;
+    margin-top: unset;
   }
   .navLeft li{
 margin-bottom: 16px;
 
   }
+  .navLeft ul{
+    display: block;
+  }
 
   .navLeft{
+    margin-top: 90px;
     margin-bottom: 16px;
   }
 
-  .sousMenu{
-    display: block;
-    position: relative;
-    overflow: hidden;
-    margin: unset;
-    padding: unset;
-    box-shadow: unset;
-    margin-top: 16px;
-  }
   .show{
+    display: none;
 overflow: visible;
-animation: fade-in 400ms ease forwards;
+transition: 0.5s;
+animation: height 400ms ease-in-out;
+
   }
   .navRight ul{
     display: flex;
@@ -387,12 +438,11 @@ a{
 body{
     width: auto;
 }
-}
 
 
 .imagesFooter
 {
-  margin-top: 48px;
+  margin-top: 24px;
   display: flex;
   justify-content: space-around;
   height: 24px;
@@ -402,3 +452,4 @@ body{
   padding-right: unset;
 }
 
+}

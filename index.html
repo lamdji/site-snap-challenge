@@ -5,46 +5,48 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>lamzo Intro section with dropdown navigation</title>
 
-  <link rel="icon" type="image/png" sizes="32x32" href=".images/favicon-32x32.png">
   <link rel="stylesheet" href="styles.css">
 </head>
 <header>
   <a class="logo" href="#"><img src="images/logo.svg" alt="logo"></a>
   <nav class="navToggleMobile">
     <a class="logoMobile" href="#"><img src="images/logo.svg" alt="logo"></a>
-    <label for="checkbox" class="hamburger">
-      <input type="checkbox" id="checkbox">
-      <span class="line lineTop"></span>
-      <span class="line lineMiddle"></span>
-      <span class="line lineBottom"></span>
-  </label>
+    <button class="hamburger" aria-label="Navigation" aria-expanded="false">
+      <span class="line1"></span>
+      <span class="line2"></span>
+      <span class="line3"></span>
+    </button>
   </nav>
-  <nav class="navToggle">
+  <div class="opacity "></div>
+  <nav class="navToggle ">
     <div class="navLeft">
 
       <ul>
-        <li><a class="moreLink" id="MoreLink" href="#">Features</a><span ><img id="arrow" class="arrow" src="images/icon-arrow-down.svg"></span>
-        
-          <ul id="sousMenu" style="display:block;visibility: hidden;"class="sousMenu">
-            <li id="sousMenuLines" class="sousMenuLines"><img class="sousMenuIcons" src="images/icon-todo.svg" alt="icon_todo"><a href="#">Todo List</a></li>
-            <li id="sousMenuLines" class="sousMenuLines"><img class="sousMenuIcons" src="images/icon-calendar.svg" alt="icon_calandar"><a href="#">Calendar</a></li>
-            <li id="sousMenuLines" class="sousMenuLines"><img class="sousMenuIcons" src="images/icon-reminders.svg" alt="icon_reminders"><a href="#">Reminders</a></li>
-            <li id="sousMenuLines" class="sousMenuLines"><img class="sousMenuIcons" src="images/icon-planning.svg" alt="icon_planning"><a href="#"> Planning</a></li>
+        <li>
+          <button class="btn" id="btn-features" href="#">Features</button>
+          <img id="arrowFeatures" class="arrow" src="images/icon-arrow-down.svg">
+          <ul class="sousMenuContent" id="sousMenuContent1">
+            <li  class="sousMenuLines"><img class="sousMenuIcons" src="images/icon-todo.svg" alt="icon_todo"><a href="#">Todo List</a></li>
+            <li  class="sousMenuLines"><img class="sousMenuIcons" src="images/icon-calendar.svg" alt="icon_calandar"><a href="#">Calendar</a></li>
+            <li  class="sousMenuLines"><img class="sousMenuIcons" src="images/icon-reminders.svg" alt="icon_reminders"><a href="#">Reminders</a></li>
+            <li  class="sousMenuLines"><img class="sousMenuIcons" src="images/icon-planning.svg" alt="icon_planning"><a href="#"> Planning</a></li>
           </ul>
         </li>
+        
 
-        <li><a class="moreLink" id="MoreLink" href="#">Company</a><span ><img id="arrow" class="arrow" src="images/icon-arrow-down.svg"></span>
-          <ul id="sousMenu"class="sousMenu"  style="display:block;visibility: hidden;">
-            <li id="sousMenuLines" class="sousMenuLines"><a href="#">History</a></li>
-            <li id="sousMenuLines" class="sousMenuLines"><a href="#">Our Team</a></li>
-            <li id="sousMenuLines" class="sousMenuItems"><a href="#">Blog</a></li>
-          </ul></li>
+        <li>
+          <button class="btn" id="btn-company" href="#">Company</button>
+          <img id="arrowCompany" class="arrow" src="images/icon-arrow-down.svg">
+          <ul class="sousMenuContent" id="sousMenuContent2">
+            <li class="sousMenuLines"><a href="#">History</a></li>
+            <li class="sousMenuLines"><a href="#">Our Team</a></li>
+            <li class="sousMenuItems"><a href="#">Blog</a></li>
+          </ul>
+        </li>
+        
         <li><a href="#">Careers</a></li>
         <li><a href="#">About</a></li>
       </ul>
-
-        
-
 
     </div>
 

@@ -1,19 +1,30 @@
-const sousMenuDown = document.querySelector(".moreLink");
-const arrow = document.querySelector(".arrow");
-const sousMenu = document.querySelector("sousMenu");
-const navbarRep = document.querySelector(".navToggle")
+const dropdownBtn = document.querySelectorAll(".btn");
 
- sousMenuDown.addEventListener('click',()=>{
-    event.preventDefault();
-arrow.classList.toggle('arrowUp');
-sousMenu.classList.toggle('show')
- })
+dropdownBtn.forEach(link => {
+  link.addEventListener('click',(e)=> {
+    let element = e.target;
 
- if (
-    previousDropdownMenu !== null
-  ) {
-    const iconArrow = previousDropdownMenu
-      .closest(".dropdown")
-      .querySelector(".arrow");
-    arrow.classList.remove("arrow-up");
-  }
+    const sousMenuContent = element.parentElement.children[2];
+    const arrow = element.parentElement.children[1];
+
+    arrow.classList.toggle('arrowUp');
+    sousMenuContent.classList.toggle('show');
+
+  })
+})
+
+
+/*pour le mobile*/
+
+
+
+  const hamburger = document.querySelector(".hamburger");
+  const navToggleShow = document.querySelector(".navToggle")
+  const opacity = document.querySelector(".opacity")
+
+ const navbarShow = () =>{
+    hamburger.classList.toggle ("open");
+    navToggleShow.classList.toggle ("show");
+    opacity.classList.toggle ("show");
+}
+hamburger.addEventListener("click",navbarShow)
