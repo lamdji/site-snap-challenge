@@ -67,24 +67,22 @@ ul{
 }
 
 .arrow{
-  transform: rotate(180deg);
+
   transition: transform 400ms ease;
 }
 
 .arrowUp{
   transform: rotate(-180deg);
-  transition: transform 400ms ease;
 }
 
 .sousMenuContent {
   position: absolute;
   display: block;
   transition: 0.5s;
-  animation: fade-in 400ms ease forwards;
+  animation: fade-in .3s ease forwards;
   visibility: hidden;
   opacity: 0;
   background: #fff;
-  padding: 24px;
   box-shadow: 0 5px 25px rgba(0, 0,0, 10%);
   border-radius: 8px;
   margin-top: 40px;
@@ -93,7 +91,7 @@ ul{
 .show {
   display: block;
   transition: 0.5s;
-  animation: fade-in 400ms ease forwards;
+  animation: fade-in .3s ease forwards;
   visibility: visible;
   opacity: 1;
 }
@@ -343,11 +341,18 @@ transition: opacity 0.2s ease-out;
     z-index: 1002;
   }
 
-
   .sousMenuContent.show{
+    max-height: 230px;
+    padding: 24px;
+
+  }
+
+  .sousMenuContent{
     position: unset;
     box-shadow: unset;
-    margin-top: unset;
+    margin-top: 0;
+    max-height: 0;
+
   }
   .navLeft li{
 margin-bottom: 16px;
@@ -365,8 +370,6 @@ margin-bottom: 16px;
   .show{
     display: none;
 overflow: visible;
-transition: 0.5s;
-animation: height 400ms ease-in-out;
 
   }
   .navRight ul{
