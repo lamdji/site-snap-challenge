@@ -23,8 +23,10 @@ dropdownBtn.forEach(link => {
   const opacity = document.querySelector(".opacity")
 
  const navbarShow = () =>{
-    hamburger.classList.toggle ("open");
-    navToggleShow.classList.toggle ("show");
-    opacity.classList.toggle ("show");
+    hamburger.classList.toggle("open");
+    navToggleShow.classList.toggle("show");
+    opacity.classList.toggle("show");
+/*    if navToggleShow.contains(open)*/
 }
+
 hamburger.addEventListener("click",navbarShow)
